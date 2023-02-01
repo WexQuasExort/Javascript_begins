@@ -387,5 +387,153 @@
 //     console.log(element)
 // }
 /*------------------------------------------------------*/
-// part 28
+// part 28 array.map = executes a provided callback function
+//                     once for each array element And creates a new array
+// let numbers = [1, 2, 3, 4, 5]
+// let squares = numbers.map(square);
+// squares.forEach(print) 
 
+// squares = numbers.map(cube);
+// squares.forEach(print) 
+
+// function square(element){
+//     return Math.pow(element ,2);
+// }
+// function cube (element){
+//     return Math.pow(element, 3)
+// }
+// function print(element){
+//     console.log(element)
+// }
+/*------------------------------------------------------*/
+// part 29 array.filter() = creates a new array with all elements
+//                          that pass the test provided by a function
+// let ages = [18, 16, 21, 17, 19, 90]
+// let adults = ages.filter(checkAge);
+// function checkAge(element){
+//     return element >= 18;
+// }
+// adults.forEach(print)
+// function print(element){
+//     console.log(element)
+// }
+/*------------------------------------------------------*/
+// part 30 array.reduce() = reduces an array to a single value
+// let prices= [5, 10, 15, 20, 25, 30]
+// let total = prices.reduce(checkOut)
+// function checkOut(total, element){
+//     return total + element;
+// }
+// console.log("The Total is: $" + total)
+/*------------------------------------------------------*/
+// part 31 sort nubmers ascending and descending
+// let grades = [100, 50, 90, 60, 80, 70]
+// grades.sort(descendingSort)
+// grades.forEach(print)
+// grades.sort(ascendingSort)
+// grades.forEach(print)
+// function descendingSort(x , y){
+//     return y - x;
+// }
+// function ascendingSort(x , y){
+//     return x - y;
+// }
+// function print(element){
+//     console.log(element)
+// }
+/*------------------------------------------------------*/
+// part 32 function expressions = function without a name(anonymous function)
+//                                  avoid polluting the global scope with names
+//                                  Write it, then forget about it
+// sayHi()
+// function sayHi(){
+//     console.log("Hiii!!");
+// } 
+// const greeting = function(){
+//     console.log("hiii!!")
+// }
+// greeting()
+/*------------------------------------------------------*/
+// part 33 arrow function = compact alternative to traditional function expression
+// =>
+// const greeting = function(userName){
+//     console.log("hi" + userName)
+// }
+// greeting("Reza");
+// const greeting1 = (userName) => console.log("hi" + userName)
+// const greeting2 = (userName, userName2) => {console.log("hi" + userName), console.log("hi" + userName2)}
+// cool
+// let grades =[100, 50, 90, 60, 80, 70]
+// grades.sort((x,y) => x - y)
+// grades.forEach((element) => console.log(element))
+/*------------------------------------------------------*/
+//part 34 shuffle an array(card game)
+// let cards = ["A", "2", "3", "5", "6","7","8","9","JACK","QUEEN", "KING"]
+// shuffle(cards)
+// cards.forEach(element => console.log(element))
+// function shuffle(array){
+//     let currentIndex = array.length
+//     while(currentIndex != 0){
+//         let randomIndex = Math.floor(Math.random() * array.length)
+//         currentIndex --;
+//         let temp = array[currentIndex]
+//         array[currentIndex] = array[randomIndex]
+//         array[randomIndex] = temp
+//     }
+//     return array
+// }
+/*------------------------------------------------------*/
+//part 35 nested fucntion = a funciton inside another function.
+//                          Quter funcitons have access to inner function
+//                          Inner functions are "hidden from outside" the outer function
+//                          used in closure (future video topic)
+// let userName = "Reza"
+// let userInbox = 0;
+
+// logIn()
+// // adds some security, we login and then have access to display functions
+// function logIn(){
+//     displayUserName()
+//     displayUserInbox()
+//     function displayUserName(){
+//         console.log("welcome" ,userName)
+//     }
+//     function displayUserInbox(){
+//         console.log("You have", userInbox, "new messages")
+//     }
+// }
+/*------------------------------------------------------*/
+//part 36 closure = a function with preserved and private data.
+//                  give you access to an outer function's scope
+//                  from an inner function.
+// document.getElementById("loginBtn").onclick = login();
+// userInbox = 420.23
+// function login(){
+//     let userName = "Reza"
+//     let userInbox = 1
+//     function alertUser(){
+//         alert(userName + " you have " + userInbox + " new messages!")
+//         userInbox = 0
+//     }
+//     return alertUser;
+// }
+/*------------------------------------------------------*/
+//part 37 Map = object that holds key-value pairs of any data type
+// const store = new Map([
+//     ["t-shirt", 20],
+//     ["jeans", 30],
+//     ["socks", 10],
+//     ["underware", 50]
+// ]);
+
+// let shoppingCart = 0;
+// store.set("hat", 40)
+// store.delete("hat")
+// console.log(store.has("hat")) //  do we have any hat
+// shoppingCart += store.get("t-shirt")
+// shoppingCart += store.get("jeans")
+// store.forEach((value, key) => console.log(key , "$" + value));
+// console.log(store.size)
+// console.log(shoppingCart)
+/*------------------------------------------------------*/
+//part 38
