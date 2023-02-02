@@ -536,4 +536,268 @@
 // console.log(store.size)
 // console.log(shoppingCart)
 /*------------------------------------------------------*/
-//part 38
+//part 38 objecct = A group of properties and methods
+//                  properties = what an object has
+//                  methods = what an object can do
+//                  use . to access properties/methods
+// const car = {
+//     model: "Mustang",
+//     color: "red",
+//     year: 2023,
+
+//     drive: function(){
+//         console.log("you drive the car")
+//     },
+//     brake: function(){
+//         console.log("you stept on the breaks")
+//     }
+// }
+// console.log(car.model)
+// console.log(car.color)
+// console.log(car.year)
+
+// car.drive()
+/*------------------------------------------------------*/
+//part 39 this = reference to a particular obejct
+//               the object depends on the immediate context
+// const car = {
+//     model: "Mustang",
+//     color: "red",
+//     year: 2023,
+//     drive: function(){
+//         console.log("you drive the car" , this.model)
+//     },
+//     brake: function(){
+//         console.log("you stept on the breaks")
+//     }
+// }
+// console.log(car.model)
+// console.log(car.color)
+// console.log(car.year)
+// car.drive()
+
+// console.log(this) // refers to window object
+// this.name = "myCoolWindow" // window.name = "myCoolWindow"
+/*------------------------------------------------------*/
+// part 40 class = a blueprint for creating objects
+//          define what properties and methods they have
+//          use a constructor for unique properties
+// class Player{
+//     score = 0
+//     pause(){
+//         console.log("you paused the game")
+//     }
+//     exit(){
+//         console.log("you exited the game")
+//     }
+// }
+// const player1 = new Player()
+// console.log(++ player1.score)
+// player1.exit()
+/*------------------------------------------------------*/
+// part 40 constructor = a specific method of a class,
+//                       accepts argumetns and assigns properties
+// class Student{
+//     constructor(name, age,gba){
+//         this.name = name;
+//         this.age = age;
+//         this.gba = gba;
+//     }
+//     study(){
+//         console.log(this.name, "is studying")
+//     }
+// }
+// const student1 = new Student("Spongebob" , 30, 3.2)
+// const student2 = new Student("Sandy" , 27, 4.0)
+// console.log(student1.name)
+// console.log(student1.age)
+// console.log(student1.gba)
+// student1.study()
+
+// console.log(student2.name)
+// console.log(student2.age)
+// console.log(student2.gba)
+/*------------------------------------------------------*/
+// part 41 static = belongs to the class, not the objects
+//                  properties: useful for caches, fixed-configuration
+//                  methodss : useful for utility functions
+// class Car{
+//     static numberOfCars = 0
+//     constructor(model){
+//         this.model = model
+//         Car.numberOfCars +=1
+//     }
+//     static startRace(){
+//         console.log("3...2...1...GO!")
+//     }
+// }
+// const car1 = new Car("Mustanng")
+// const car2 = new Car("Corvette")
+// const car3 = new Car("BMW")
+// const car4 = new Car("Ferrari")
+
+// console.log(Car.numberOfCars)
+// console.log(car1.numberOfCars)
+// Car.startRace()
+/*------------------------------------------------------*/
+// part 42 inheritance = a child class can inherit all the
+//                       methods and properties form another class
+// class animal{
+//     alive = true
+//     name = "rabbit"
+//     eat(){
+//         console.log("This",this.name, "is eating")
+//     }
+//     sleep(){
+//         console.log("This",this.name, "is sleeping")
+//     }
+// }
+
+// class Rabbit extends animal{
+//     name = "rabbit"
+//     run(){
+//         console.log("This",this.name, "is running")
+//     }
+// }
+
+// class Fish extends animal{
+//     name = "fish"
+//     swim(){
+//         console.log("This",this.name, "is swimming")
+//     }
+// }
+
+// const rabbit1 = new Rabbit()
+// const fish = new Fish()
+// const hawk = new Rabbit()
+// console.log(rabbit1.alive)
+// rabbit1.eat()
+// rabbit1.sleep()
+// rabbit1.run()
+// fish.swim();
+/*------------------------------------------------------*/
+// part 44  super = Refers to the parent class
+//                 Commonly used to invoke constructor of parent class
+// class Animal{
+//     constructor(name, age){
+//         this.name = name
+//         this.age = age
+//     }
+// }
+// class Rabbit extends Animal{
+//     constructor(name, age, runSpeed){
+//         super(name, age)
+//         this.runSpeed = runSpeed
+//     }
+// }
+// class Fish extends Animal{
+//     constructor(name, age, swimSpeed){
+//         super(name, age)
+//         this.swimSpeed = swimSpeed
+//     }
+// }
+// class Hawk extends Animal{
+//     constructor(name, age, flySpeed){
+//         super(name, age)
+//         this.flySpeed = flySpeed
+//     }
+// }
+// const rabbit = new Rabbit("rabbit", 1, 40)
+// const fish = new Fish("fish", 1, 40)
+// const hawk = new Hawk("hawk", 1, 40)
+
+// console.log(fish.name)
+// console.log(fish.age)
+// console.log(fish.swimSpeed)
+/*------------------------------------------------------*/
+// part 45 get = binds an object property to a function
+//               when that property is accessed
+//         set = binds an object property to fucntion
+//               when that property is assigned a value
+// class Car{
+//     constructor(power){
+//         this._gas = 25
+//         this._power = power
+//     }
+//     get power(){
+//         return this._power + "hp"
+//     }
+//     get gas(){
+//         return this._gas + "L"
+//     }
+//     set power(value){
+//         this.power = value
+//     }
+//     set gas(value){
+//         if(value > 1010){
+//             value = 1010
+//         }else if(value < 0){
+//             value = 0
+//         }
+//             this._gas = value    
+//     }
+// }
+// let car = new Car(400)
+// car.gas = 10000000000
+// console.log(car.power)
+// console.log(car.gas)
+/*------------------------------------------------------*/
+// part 46 pass objects as argumetns
+// class Car{
+
+//     constructor(model, year, color){
+//         this.model = model;
+//         this.year = year;
+//         this.color = color;
+//     }
+// }
+
+// const car1 = new Car("Mustang", 2023, "red",);
+// const car2 = new Car("Corvette", 2024, "blue");
+// const car3 = new Car("Lambo", 2022, "yellow",);
+
+// changeColor(car3, "gold");
+// displayInfo(car3);
+
+// function displayInfo(car){
+//     console.log(car.model);
+//     console.log(car.year);
+//     console.log(car.color);
+// }
+// function changeColor(car, color){
+//     car.color = color;
+// }
+/*------------------------------------------------------*/
+// part 47 array of obejct
+// class Car{
+
+//     constructor(model, year, color){
+//         this.model = model;
+//         this.year = year;
+//         this.color = color;
+//     }
+//     drive(){
+//         console.log(`You drive the ${this.model}`);
+//     }
+// }
+
+// const car1 = new Car("Mustang", 2023, "red");
+// const car2 = new Car("Corvette", 2024, "blue");
+// const car3 = new Car("Lambo", 2022, "yellow");
+// const car4 = new Car("Ferrari", 2025, "white");
+
+// const cars = [car1, car2, car3, car4];
+
+// console.log(cars[0].model);
+// console.log(cars[1].model);
+// console.log(cars[2].model);
+
+// startRace(cars);
+
+// function startRace(cars){
+//     for(const car of cars){
+//         car.drive();
+//     }
+// }
+/*------------------------------------------------------*/
+// part 48
