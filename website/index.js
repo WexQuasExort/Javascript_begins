@@ -800,5 +800,140 @@
 //     }
 // }
 /*------------------------------------------------------*/
-// part 48
-console.log("salam")
+// part 48 error = object with a description of
+//                  something went wrong
+//                  can't open file
+//                  Lose connection
+//                  User types incorrect inpit
+//                  TypeError
+//                  throw = executes a user-defined-error
+// try{
+//     let x =window.prompt("Enter a number")
+//     x = Number(x)
+
+//     if (isNaN(x)) throw "That wasn't a number!"
+//     if (x == "") throw "That was empty"
+
+//     console.log(x + "is a number")
+// }catch(error){
+//     console.log(error)
+// }finally{
+//     console.log("This always executes")
+// }
+/*------------------------------------------------------*/
+// part 49 setTimeout() = invokes a function after a number of milliseconds
+                        // asynchronized function (doesn't pause execution)
+// let item = "cryptocurrency"
+// let price = 420.69
+// let timer1 = setTimeout(firstMessage, 3000, item, price);
+// let timer2 = setTimeout(secondMessage, 6000);
+// let timer3 = setTimeout(thirdMessage , 9000);
+
+// function firstMessage(item, price){
+//     alert("Buy this" , item ,"for", price, "dollars"); 
+// }
+// function secondMessage(){
+//     alert("This is not a scam");
+// }
+// function thirdMessage(){
+//     alert("Do IIT");
+// }
+
+// document.getElementById("myButton").onclick = function(){
+//     clearTimeout(timer1);
+//     clearTimeout(timer2);
+//     clearTimeout(timer3);
+//     alert("Do ITT!");
+// }
+/*------------------------------------------------------*/
+// part 50 setInterval = invokes a function repeatedly after a number of milliseconds
+//                       asynchronous function (doesn't pause execution)
+// let count = 0;
+// let max = window.prompt("Count up to what number?");
+// max = Number(max);
+// const myTimer = setInterval(countUp, 1000);
+
+// function countUp(){
+//     count ++;
+//     console.log(count);
+//     if(count >= max){
+//         clearInterval(myTimer);
+//     }
+// }
+/*------------------------------------------------------*/
+// part 51 The Data object is used to work with dates & times
+// let date = new Date(0);
+// let date1 = new Date(2023, 0, 1, 2, 3, 4, 5);
+// let date2 = new Date("January 1, 2023 00:00:00");
+
+// let year = date.getFullYear() 
+// let dayOfMonth = date.getDate()
+// let dayOfWeek = date.getDay()
+// let month = date.getMonth()
+// let hour = date.getMonth()
+// let minutes = date.getMinutes()
+// let seconds = date.getSeconds()
+// let ms = date.getMilliseconds()
+
+// date.setFullYear(2024)
+// date.setMonth(11)
+// date.setDate(31)
+// date.setHours(23)
+// date.setMinutes(1)
+// date.setMilliseconds(0)
+
+// function formatDate(data){
+//     let year = data.getFullYear()
+//     let month = data.getMonth() + 1
+//     let day = data.getDate()
+
+//     return month/day/year 
+// }
+// function formatTime(){
+//     let hours = date.getHours();
+//     let minutes = date.getMinutes()
+//     let seconds = date.getSeconds()
+//     let amOrPm = hours >= 12 ? "pm" : "am"
+//     hour = (hour%12) || 12
+
+//     return hours, minutes, seconds, amOrPm
+// }
+
+// console.log(formatDate)
+// console.log(formatTime)
+
+// console.log(year)
+// date = date.toLocaleString();
+// console.log(date);
+/*------------------------------------------------------*/
+// part 52 synchronous code = In an ordered sequence.
+//                           Step-by-step linear instructions
+//                           (start now, finish now)
+// part 52 asynchronous code = Out of sequence.
+//                             Ex. Access a database
+//                             Fetch a file
+//                             Tasks that take time
+//                             (start now, finish sometime later)
+
+// console.log("START");
+// console.log("This step is synchronous");
+// console.log("END");
+
+// console.log("START");
+// setTimeout(() => console.log("This is a asynchronous"), 5000);
+// console.log("END");
+/*------------------------------------------------------*/
+// part 53
+// console.time() = Starts a timer you can use to 
+//                  track how long an operation takes
+//                  Give each timer a unique name.
+
+// //start
+// console.time("Response time");
+
+// alert("CLICK THE OK BUTTON!");
+
+// //end
+// console.timeEnd("Response time");
+/*------------------------------------------------------*/
+// part 54
